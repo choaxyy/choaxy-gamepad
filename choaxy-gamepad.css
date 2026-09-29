@@ -1,0 +1,10 @@
+/* Choaxy custom PlayStation 4 skin for GamePad Viewer */
+.controller.ds4,
+.controller.ds4.disconnected {
+  background-image: url("https://i.imgur.com/Sq8DXA5.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: contain !important;
+  width: 806px !important;
+  height: 598px !important;
+}
