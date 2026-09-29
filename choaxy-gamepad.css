@@ -1,22 +1,25 @@
-/* Choaxy custom PlayStation 4 skin for GamePad Viewer */
-/* Base artwork */
+/* Choaxy live controller skin
+   PS4 is used ONLY as the input source; this CSS forces the live controls
+   onto the custom PS5/DualSense-style artwork. */
+
 .controller.ds4,
+.controller.ds4.edit,
 .controller.ds4.disconnected {
-  background-image: url("https://i.imgur.com/Sq8DXA5.png") !important;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-  background-size: contain !important;
   width: 806px !important;
   height: 598px !important;
+  background: url("https://i.imgur.com/Sq8DXA5.png") no-repeat center center !important;
+  background-size: contain !important;
 }
 
-/* Keep the controller art visible even when the pad is reconnecting */
-.ds4.disconnected div {
+/* Keep controls available with the edit skin. */
+.controller.ds4.edit.disconnected div {
   display: block !important;
 }
 
-/* ---------- FACE BUTTONS ---------- */
-.ds4 .abxy {
+/* =========================================================
+   FACE BUTTONS — PS5-style coordinates on the custom artwork
+   ========================================================= */
+.controller.ds4.edit .abxy {
   position: absolute !important;
   left: 0 !important;
   top: 0 !important;
@@ -24,71 +27,71 @@
   height: 598px !important;
 }
 
-.ds4 .button {
-  width: 44px !important;
-  height: 44px !important;
+.controller.ds4.edit .button {
+  position: absolute !important;
+  width: 56px !important;
+  height: 56px !important;
+  margin: 0 !important;
   background: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
   border-radius: 50% !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
   box-sizing: border-box !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
 }
 
-.ds4 .button::after {
-  color: #f7efff;
+.controller.ds4.edit .button::after {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f8efff;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 34px;
   font-weight: 400;
   line-height: 1;
-  text-shadow:
-    0 0 3px #ffffff,
-    0 0 8px #d72dff,
-    0 0 14px #8b17ff;
+  text-shadow: 0 0 4px #fff, 0 0 9px #e340ff, 0 0 17px #8f1cff;
 }
 
-.ds4 .a::after { content: "×"; }
-.ds4 .b::after { content: "○"; }
-.ds4 .x::after { content: "□"; }
-.ds4 .y::after { content: "△"; }
+/* GamePad Viewer mapping: A=X, B=Circle, X=Square, Y=Triangle */
+.controller.ds4.edit .a {
+  left: 625px !important;
+  top: 229px !important;
+}
+.controller.ds4.edit .a::after { content: "×"; }
 
-.ds4 .a {
-  left: 631px !important;
-  top: 230px !important;
-  bottom: auto !important;
+.controller.ds4.edit .b {
+  left: 672px !important;
+  top: 180px !important;
 }
-.ds4 .b {
-  left: 679px !important;
-  top: 181px !important;
-  right: auto !important;
-}
-.ds4 .x {
-  left: 584px !important;
-  top: 181px !important;
-}
-.ds4 .y {
-  left: 632px !important;
-  top: 128px !important;
-}
+.controller.ds4.edit .b::after { content: "○"; }
 
-.ds4 .button.pressed {
-  background: rgba(228, 52, 255, 0.20) !important;
-  box-shadow:
-    0 0 10px rgba(244, 72, 255, .95),
-    0 0 20px rgba(153, 39, 255, .75) !important;
+.controller.ds4.edit .x {
+  left: 577px !important;
+  top: 180px !important;
+}
+.controller.ds4.edit .x::after { content: "□"; }
+
+.controller.ds4.edit .y {
+  left: 625px !important;
+  top: 131px !important;
+}
+.controller.ds4.edit .y::after { content: "△"; }
+
+.controller.ds4.edit .button.pressed {
+  background: rgba(224, 54, 255, 0.22) !important;
+  box-shadow: 0 0 10px #fff, 0 0 20px #e633ff, 0 0 28px #7f24ff !important;
   transform: scale(.92);
 }
 
-.ds4 .button.pressed::after {
-  color: #ffffff;
-  text-shadow:
-    0 0 4px #ffffff,
-    0 0 10px #ff42ff,
-    0 0 20px #b921ff;
-}
-
-/* ---------- D-PAD ---------- */
-.ds4 .dpad {
+/* ==========================
+   D-PAD — custom coordinates
+   ========================== */
+.controller.ds4.edit .dpad {
   position: absolute !important;
   left: 0 !important;
   top: 0 !important;
@@ -96,67 +99,73 @@
   height: 598px !important;
 }
 
-.ds4 .face,
-.ds4 .face.up,
-.ds4 .face.down,
-.ds4 .face.left,
-.ds4 .face.right {
-  width: 40px !important;
-  height: 40px !important;
+.controller.ds4.edit .face,
+.controller.ds4.edit .face.up,
+.controller.ds4.edit .face.down,
+.controller.ds4.edit .face.left,
+.controller.ds4.edit .face.right {
+  position: absolute !important;
+  width: 46px !important;
+  height: 46px !important;
+  margin: 0 !important;
   background: transparent !important;
-  right: auto !important;
-  bottom: auto !important;
-  border-radius: 13px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-radius: 14px !important;
   box-sizing: border-box !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
 }
 
-.ds4 .face::after {
-  color: #f7efff;
+.controller.ds4.edit .face::after {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f8efff;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   line-height: 1;
-  text-shadow:
-    0 0 3px #ffffff,
-    0 0 7px #cf2cff,
-    0 0 12px #7b1fff;
+  text-shadow: 0 0 4px #fff, 0 0 8px #df3aff, 0 0 15px #821eff;
 }
 
-.ds4 .face.up {
-  left: 118px !important;
-  top: 133px !important;
+.controller.ds4.edit .face.up {
+  left: 111px !important;
+  top: 135px !important;
 }
-.ds4 .face.up::after { content: "▲"; }
+.controller.ds4.edit .face.up::after { content: "▲"; }
 
-.ds4 .face.down {
-  left: 118px !important;
-  top: 233px !important;
-}
-.ds4 .face.down::after { content: "▼"; }
-
-.ds4 .face.left {
-  left: 76px !important;
+.controller.ds4.edit .face.left {
+  left: 72px !important;
   top: 183px !important;
 }
-.ds4 .face.left::after { content: "◀"; }
+.controller.ds4.edit .face.left::after { content: "◀"; }
 
-.ds4 .face.right {
-  left: 160px !important;
+.controller.ds4.edit .face.right {
+  left: 151px !important;
   top: 183px !important;
 }
-.ds4 .face.right::after { content: "▶"; }
+.controller.ds4.edit .face.right::after { content: "▶"; }
 
-.ds4 .face.pressed {
-  background: rgba(228, 52, 255, 0.20) !important;
-  box-shadow:
-    0 0 9px rgba(244, 72, 255, .95),
-    0 0 18px rgba(153, 39, 255, .70) !important;
+.controller.ds4.edit .face.down {
+  left: 111px !important;
+  top: 223px !important;
+}
+.controller.ds4.edit .face.down::after { content: "▼"; }
+
+.controller.ds4.edit .face.pressed {
+  background: rgba(224, 54, 255, 0.22) !important;
+  box-shadow: 0 0 9px #fff, 0 0 18px #de39ff !important;
 }
 
-/* ---------- ANALOG STICKS ---------- */
-.ds4 .sticks {
+/* ==========================
+   ANALOG STICKS
+   Keep the artwork's rings; the smaller dark caps move live.
+   ========================== */
+.controller.ds4.edit .sticks {
   position: absolute !important;
   left: 0 !important;
   top: 0 !important;
@@ -164,82 +173,91 @@
   height: 598px !important;
 }
 
-.ds4 .stick {
+.controller.ds4.edit .stick {
+  position: absolute !important;
+  width: 58px !important;
+  height: 58px !important;
   -webkit-mask: none !important;
   mask: none !important;
-  width: 62px !important;
-  height: 62px !important;
+  background: radial-gradient(circle at 45% 40%, #33303a 0%, #17151c 58%, #09090c 100%) !important;
+  border: 2px solid rgba(239, 62, 255, .95) !important;
   border-radius: 50% !important;
-  background:
-    radial-gradient(circle at 45% 40%, #2d2b34 0%, #16151b 58%, #09090c 100%) !important;
-  border: 2px solid rgba(237, 57, 255, .95) !important;
-  box-shadow:
-    inset 0 0 12px rgba(0, 0, 0, .9),
-    0 0 7px rgba(237, 57, 255, .8) !important;
   box-sizing: border-box !important;
+  box-shadow: inset 0 0 12px rgba(0,0,0,.9), 0 0 7px rgba(234,48,255,.85) !important;
 }
 
-.ds4 .stick.left {
-  left: 234px !important;
-  top: 300px !important;
+.controller.ds4.edit .stick.left {
+  left: 244px !important;
+  top: 303px !important;
 }
-.ds4 .stick.right {
-  left: 507px !important;
-  top: 300px !important;
-}
-
-.ds4 .stick.pressed {
-  border-color: #ffffff !important;
-  box-shadow:
-    inset 0 0 12px rgba(0,0,0,.9),
-    0 0 9px #ffffff,
-    0 0 18px #e52dff !important;
+.controller.ds4.edit .stick.right {
+  left: 504px !important;
+  top: 303px !important;
 }
 
-/* ---------- TRIGGERS / BUMPERS ---------- */
-.ds4 .trigger {
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,.75),
-    rgba(235,55,255,.85) 35%,
-    rgba(100,25,160,.15)
-  ) !important;
-  border-radius: 34px 34px 12px 12px !important;
-  box-shadow: 0 0 12px rgba(232, 47, 255, .85) !important;
+.controller.ds4.edit .stick.pressed {
+  border-color: #fff !important;
+  box-shadow: inset 0 0 12px rgba(0,0,0,.9), 0 0 9px #fff, 0 0 18px #e633ff !important;
 }
 
-.ds4 .bumper {
-  background: rgba(232, 47, 255, .68) !important;
-  border-radius: 15px !important;
-  box-shadow: 0 0 12px rgba(232, 47, 255, .9) !important;
+/* ==========================
+   L2 / R2 shoulder overlays
+   ========================== */
+.controller.ds4.edit .triggers {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 806px !important;
+  height: 598px !important;
 }
 
-/* ---------- CENTER BUTTONS ---------- */
-.ds4 .touchpad.pressed {
-  background: rgba(225, 39, 255, .08) !important;
-  border-radius: 20px !important;
-  box-shadow:
-    inset 0 0 16px rgba(239, 61, 255, .45),
-    0 0 12px rgba(164, 36, 255, .35) !important;
+.controller.ds4.edit .trigger {
+  position: absolute !important;
+  width: 96px !important;
+  height: 50px !important;
+  border-radius: 28px 28px 12px 12px !important;
+  background: linear-gradient(to bottom, rgba(255,255,255,.75), rgba(233,55,255,.9) 38%, rgba(118,25,175,.2)) !important;
+  box-shadow: 0 0 14px rgba(232,48,255,.9) !important;
 }
 
-.ds4 .meta {
+.controller.ds4.edit .trigger.left {
+  left: 104px !important;
+  top: 27px !important;
+}
+.controller.ds4.edit .trigger.right {
+  left: 606px !important;
+  top: 27px !important;
+}
+
+/* Hide the old PS4 bumper artwork; the custom base already has shoulders. */
+.controller.ds4.edit .bumpers,
+.controller.ds4.edit .bumper {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Center/PS press: subtle glow only. */
+.controller.ds4.edit .meta {
+  position: absolute !important;
   left: 377px !important;
-  top: 314px !important;
-  bottom: auto !important;
+  top: 306px !important;
   width: 52px !important;
-  height: 22px !important;
+  height: 24px !important;
+  bottom: auto !important;
   border-radius: 12px !important;
+  background: transparent !important;
+}
+.controller.ds4.edit .meta.pressed {
+  background: rgba(234, 51, 255, .45) !important;
+  box-shadow: 0 0 13px #e734ff !important;
 }
 
-.ds4 .meta.pressed {
-  background: rgba(237, 57, 255, .55) !important;
-  box-shadow: 0 0 12px #e934ff !important;
+/* Touchpad/share/options: keep the logo artwork clean until pressed. */
+.controller.ds4.edit .touchpad {
+  background: transparent !important;
 }
-
-/* Share/options are intentionally subtle so the artwork stays clean. */
-.ds4 .back.pressed,
-.ds4 .start.pressed {
-  opacity: .55 !important;
-  filter: hue-rotate(55deg) saturate(2.2) brightness(1.35);
+.controller.ds4.edit .touchpad.pressed {
+  background: rgba(225, 40, 255, .08) !important;
+  box-shadow: inset 0 0 18px rgba(239,61,255,.35), 0 0 12px rgba(164,36,255,.25) !important;
 }
