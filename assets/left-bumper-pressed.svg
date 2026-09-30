@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 48">
   <defs>
     <filter id="glow" x="-80%" y="-150%" width="260%" height="400%">
-      <feGaussianBlur stdDeviation="3.5" result="b"/>
+      <feGaussianBlur stdDeviation="1.8" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
   <path d="M8 37 C32 17 63 8 101 9 C116 9 127 12 134 17 L126 37 C95 31 63 31 17 44 Z"
-        fill="#D62BFF" fill-opacity=".28"
-        stroke="#F35CFF" stroke-opacity=".78" stroke-width="2"
+        fill="#B91CFF" fill-opacity=".08"
+        stroke="#E946FF" stroke-opacity=".58" stroke-width="1.6"
         filter="url(#glow)"/>
 </svg>
