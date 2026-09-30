@@ -6,7 +6,7 @@
     </filter>
   </defs>
   <path d="M87 58 C82 30 73 12 57 6 C42 1 22 3 12 12 L9 53 C28 57 52 60 87 58 Z"
-        fill="#B91CFF" fill-opacity=".10"
-        stroke="#E946FF" stroke-opacity=".66" stroke-width="1.8"
+        fill="#A914E6" fill-opacity=".18"
+        stroke="#D93CFF" stroke-opacity=".58" stroke-width="1.6"
         filter="url(#glow)"/>
 </svg>
